@@ -25,7 +25,7 @@ public class Datenbank {
 	private Connection _conn;
 
 	public Datenbank() {
-		_dbName = "RPODB";
+		_dbName = "data/RPODB";
 		try {
 			Class.forName("org.h2.Driver");
 		} catch (ClassNotFoundException e) {
