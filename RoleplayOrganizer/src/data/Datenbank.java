@@ -7,12 +7,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import data.TabellenString.Typ;
+import data.TabellenSpalte.Typ;
 
 public class Datenbank {
 
 	/**
-	 * Die Enums nutzen um Tippfehler beim Tabellennamen zuvermeiden
+	 * Die Enums benutzen um Tippfehler beim Tabellennamen zu vermeiden
 	 * 
 	 * @author benny_000
 	 * 
@@ -42,18 +42,18 @@ public class Datenbank {
 		String text = "CREATE TABLE IF NOT EXISTS " + Tables.maincharacter.toString()
 				+ "(ID INT PRIMARY KEY AUTO_INCREMENT(1,1) NOT NULL, NAME VARCHAR(255))";
 		fuereAus(text);
-		ArrayList<TabellenString> spalten = new ArrayList<TabellenString>();
-		TabellenString idTabelle = new TabellenString("id", Typ.INT, 20);
+		ArrayList<TabellenSpalte> spalten = new ArrayList<TabellenSpalte>();
+		TabellenSpalte idTabelle = new TabellenSpalte("id", Typ.INT, 20);
 		idTabelle.setNotNull(true);
 		idTabelle.setPrimary(true);
 		spalten.add(idTabelle);
-		spalten.add(new TabellenString("name", Typ.VARCHAR, 255));
+		spalten.add(new TabellenSpalte("name", Typ.VARCHAR, 255));
 		erstelleTabelle(Tables.maincharacter, spalten);
 
 	}
 
 	/**
-	 * Führt einen belieben SQL Befehl aus
+	 * Führt einen beliebigen SQL Befehl aus
 	 * 
 	 * @param text
 	 */
@@ -81,12 +81,12 @@ public class Datenbank {
 	/**
 	 * Erstellt eine Tabelle
 	 * @param name der Name der Tabelle
-	 * @param spalten Liste der Spalten als TabellenString
+	 * @param spalten Liste der Spalten als TabellenSpalte
 	 */
-	private void erstelleTabelle(Tables name, ArrayList<TabellenString> spalten) {
+	private void erstelleTabelle(Tables name, ArrayList<TabellenSpalte> spalten) {
 		String text = "CREATE TABLE IF NOT EXISTS " + name.toString() + " (";
 
-		for (TabellenString t : spalten) {
+		for (TabellenSpalte t : spalten) {
 			text = text + t.getText() + ", ";
 		}
 		text = text.substring(0, text.length() - 2);

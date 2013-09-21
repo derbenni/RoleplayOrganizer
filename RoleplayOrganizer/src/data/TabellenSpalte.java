@@ -1,6 +1,6 @@
 package data;
 
-public class TabellenString {
+public class TabellenSpalte {
 	public enum Typ {
 		VARCHAR, INT;
 	}
@@ -18,7 +18,7 @@ public class TabellenString {
 	 * @param typ der Datentyp der Spalte
 	 * @param groesse die maximale anzahl von Symbolen
 	 */
-	public TabellenString(String name, Typ typ, int groesse) {
+	public TabellenSpalte(String name, Typ typ, int groesse) {
 		_name = name;
 		_typ = typ;
 		_groesse = groesse;
@@ -57,7 +57,7 @@ public class TabellenString {
 	
 	
 	public static void main(String args[]) {
-		TabellenString s = new TabellenString("Name", Typ.VARCHAR, 255);
+		TabellenSpalte s = new TabellenSpalte("Name", Typ.VARCHAR, 255);
 		s.setNotNull(false);
 		s.setPrimary(false);
 		System.out.println(s.getText());
