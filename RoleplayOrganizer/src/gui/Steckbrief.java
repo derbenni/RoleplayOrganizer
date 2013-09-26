@@ -4,18 +4,20 @@ import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
+import charakter.SubCharakter;
+
 public class Steckbrief {
 
 	private SteckbriefGUI _gui;
 
-	private Charakter _charakter;
+	private SubCharakter _charakter;
 
-	public Steckbrief(Charakter charakter) {
+	public Steckbrief(SubCharakter charakter) {
 		_gui = new SteckbriefGUI();
 		setCharakter(charakter);
 	}
 
-	public void setCharakter(Charakter charakter) {
+	public void setCharakter(SubCharakter charakter) {
 		_charakter = charakter;
 		if (charakter != null) {
 			setName(_charakter.get_name());

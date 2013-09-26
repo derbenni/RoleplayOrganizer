@@ -1,10 +1,10 @@
-package gui;
+package charakter;
 
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 
-public class Charakter {
+public class SubCharakter {
 
 	private String _name;
 	private String _nachname;
@@ -17,9 +17,18 @@ public class Charakter {
 	private String _beschreibung;
 	private String _eigenschaften;
 	private String _story;
-	private ArrayList<Charakter> _beziehungen;
-	private ArrayList<Charakter> _familie;
+	private String _geburtsdatum;	
+	private int _ursprungsid;
+	private int _weltid;
+	private String _geschlecht;
+	private ArrayList<Relationship> _beziehungen;
 	private ArrayList<String> _tags;
+	
+	public SubCharakter() {
+		_beziehungen = new ArrayList<Relationship>();
+		_tags = new ArrayList<String>();
+	}
+	
 	public ArrayList<String> get_tags() {
 		return _tags;
 	}
@@ -46,16 +55,12 @@ public class Charakter {
 		return _beschreibung;
 	}
 
-	public ArrayList<Charakter> get_beziehungen() {
+	public ArrayList<Relationship> get_beziehungen() {
 		return _beziehungen;
 	}
 
 	public String get_eigenschaften() {
 		return _eigenschaften;
-	}
-
-	public ArrayList<Charakter> get_familie() {
-		return _familie;
 	}
 
 	public String get_groesse() {
@@ -95,14 +100,11 @@ public class Charakter {
 	public void set_beschreibung(String _beschreibung) {
 		this._beschreibung = _beschreibung;
 	}
-	public void set_beziehungen(ArrayList<Charakter> _beziehungen) {
+	public void set_beziehungen(ArrayList<Relationship> _beziehungen) {
 		this._beziehungen = _beziehungen;
 	}
 	public void set_eigenschaften(String _eigenschaften) {
 		this._eigenschaften = _eigenschaften;
-	}
-	public void set_familie(ArrayList<Charakter> _familie) {
-		this._familie = _familie;
 	}
 	public void set_groesse(String _groesse) {
 		this._groesse = _groesse;
@@ -133,6 +135,38 @@ public class Charakter {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+	}
+
+	public int get_ursprungsid() {
+		return _ursprungsid;
+	}
+
+	public void set_ursprungsid(int _ursprungsid) {
+		this._ursprungsid = _ursprungsid;
+	}
+
+	public String get_geburtsdatum() {
+		return _geburtsdatum;
+	}
+
+	public void set_geburtsdatum(String _geburtsdatum) {
+		this._geburtsdatum = _geburtsdatum;
+	}
+
+	public int get_weltid() {
+		return _weltid;
+	}
+
+	public void set_weltid(int _weltid) {
+		this._weltid = _weltid;
+	}
+
+	public String get_geschlecht() {
+		return _geschlecht;
+	}
+
+	public void set_geschlecht(String _geschlecht) {
+		this._geschlecht = _geschlecht;
 	}
 
 }

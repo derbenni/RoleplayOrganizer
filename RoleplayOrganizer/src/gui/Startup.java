@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import charakter.SubCharakter;
+
 public class Startup {
 
 	private JFrame _anzeige;
@@ -18,7 +20,7 @@ public class Startup {
 	}
 
 	private JPanel testSteckbrief() {
-		Charakter benni = new Charakter();
+		SubCharakter benni = new SubCharakter();
 		benni.set_alter("21");
 		benni.set_augenfarbe("braun");
 		benni.set_beruf("Student");
@@ -26,7 +28,6 @@ public class Startup {
 		benni.set_beziehungen(null);
 		benni.set_bild("bildplatzhalter.jpg");
 		benni.set_eigenschaften("Der Benni ist sehr hilfsbereit und kann total gut programmieren. Er kann außerdem toll singen. Und ich glaube er kann noch viele weitere Dinge die ich noch nicht gesehen habe, aber das werde ich noch herausfinden! Er kann wie ein Dinosaurier schreien und auch wie ein Vogel. Er sammelt MÄNNLICHE FILME. Und er spielt MÄNNLICHE SPIELE.");
-		benni.set_familie(null);
 		benni.set_sternzeichen("Skorpion");
 		benni.set_groesse("2,50");
 		benni.set_haarfarbe("Blau");
