@@ -17,6 +17,7 @@ public class SteckbriefGUI {
 	private JPanel _hauptpanel;
 	private JTextField _name;
 	private JTextField _nachname;
+	private JTextField _relevance;
 	private JTextField _beruf;
 	private JTextField _alter;
 	private JTextField _sternzeichen;
@@ -123,6 +124,11 @@ public class SteckbriefGUI {
 	public JTextField get_groesse() {
 		return _groesse;
 	}
+	
+	public JTextField get_relevance() {
+		return _relevance;
+	}
+	
 
 	private FancyKlappbarePanels initialisiereBeschreibungsPanel() {
 		_beschreibungsPanel = new FancyKlappbarePanels("Beschreibung");
@@ -185,6 +191,7 @@ public class SteckbriefGUI {
 		JPanel bildPanel = new JPanel();
 		_name = new JTextField("Hansfriederich");
 		_nachname = new JTextField("Peter");
+		_relevance = new JTextField();
 		_beruf = new JTextField("Lümmel");
 		_alter = new JTextField("50");
 		_sternzeichen = new JTextField("Fische");
@@ -192,6 +199,7 @@ public class SteckbriefGUI {
 		vollerName.add(_name);
 		vollerName.add(_nachname);
 		infoPanel.add(vollerName);
+		infoPanel.add(_relevance);
 		infoPanel.add(_beruf);
 		infoPanel.add(_alter);
 		infoPanel.add(_sternzeichen);

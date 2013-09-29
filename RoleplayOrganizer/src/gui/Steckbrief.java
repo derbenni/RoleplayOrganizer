@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
+import charakter.Relevance;
 import charakter.SubCharakter;
 
 public class Steckbrief {
@@ -22,19 +23,38 @@ public class Steckbrief {
 		if (charakter != null) {
 			setName(_charakter.get_name());
 			setNachname(_charakter.get_nachname());
+			setRelevance(_charakter.getRelevance());
 			setBeruf(_charakter.get_beruf());
 			setAlter(_charakter.get_alter());
-			setSternzeichen(_charakter.get_sternzeichen());
+			setSternzeichen(_charakter.get_sternzeichen());	
+			setHaarfarbe(_charakter.get_haarfarbe());
+			setAugenfarbe(_charakter.get_augenfarbe());
+			setGroesse(_charakter.get_groesse());
 			setBeschreibung(_charakter.get_beschreibung());
 			setEigenschaften(_charakter.get_eigenschaften());
 			setStory(_charakter.get_story());
 			setTags(_charakter.get_tags());
-			
 
 		}
 
 	}
 
+	public void setRelevance(Relevance r) {
+		_gui.get_relevance().setText(r.get_name());
+	}
+	
+	public void setGroesse(String n) {
+		_gui.get_groesse().setText(n);
+	}
+	
+	public void setHaarfarbe(String n) {
+		_gui.get_haarfarbe().setText(n);
+	}
+	
+	public void setAugenfarbe(String n) {
+		_gui.get_augenfarbe().setText(n);
+	}
+	
 	public void setBeschreibung(String n) {
 		_gui.getBeschreibungsFeld().setText(n);
 	}
@@ -52,8 +72,10 @@ public class Steckbrief {
 		for (String s : list) {
 			inhalt = inhalt + s + ", ";
 		}
-		inhalt = inhalt.substring(0,inhalt.length()-2);
-		_gui.get_tags().setText(inhalt);
+		if (inhalt.length() > 0) {
+			inhalt = inhalt.substring(0, inhalt.length() - 2);
+			_gui.get_tags().setText(inhalt);
+		}
 	}
 
 	public void setName(String n) {
@@ -68,8 +90,8 @@ public class Steckbrief {
 		_gui.get_beruf().setText(n);
 	}
 
-	public void setAlter(String n) {
-		_gui.get_alter().setText(n);
+	public void setAlter(int n) {
+		_gui.get_alter().setText(String.valueOf(n));
 	}
 
 	public void setSternzeichen(String n) {

@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import charakter.SubCharakter;
+import data.Datenbank;
 
 public class Startup {
 
@@ -13,7 +14,8 @@ public class Startup {
 
 	public Startup() {
 		_anzeige = new JFrame();
-		_anzeige.getContentPane().add(testSteckbrief());
+		Datenbank datenbank = new Datenbank();
+		_anzeige.getContentPane().add(new Steckbrief(datenbank.getSubCharakter(1)).getSteckbriefPanel());
 		_anzeige.setVisible(true);
 		_anzeige.pack();
 		
@@ -21,7 +23,7 @@ public class Startup {
 
 	private JPanel testSteckbrief() {
 		SubCharakter benni = new SubCharakter();
-		benni.set_alter("21");
+		benni.set_alter(201);
 		benni.set_augenfarbe("braun");
 		benni.set_beruf("Student");
 		benni.set_beschreibung("Der Benni sieht total gut aus, und beobachtet sich für gewöhnlich selbst gerne in Spiegeln. Deswegen stehen in seinem Zimmer auch 20 Spiegel an jeder Seite. Kann ich verstehen.");
